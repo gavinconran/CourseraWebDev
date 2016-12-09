@@ -1,20 +1,73 @@
-p 
-{
-color: black;
-text-align:center;
-}
- 
 h1
 {
 color:black;
 text-align:center;
 font-size:18pt;
 }
- 
-body 
-{
-background-image:url("background 1.jpg");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+div {
+  width: 30%;
+  padding: 10px;
+  background-color: #D3D3D3;
+  border: 1px solid black;
+  margin: 20px;
+  font-size: 100%
+}
+
+div#container1 {
+  float: left;
+  position: relative;
+}
+
+div#container2 {
+  float: left;
+  position: relative;
+}
+
+div#container3 {
+  float: left;
+  position: relative;
+}
+
+#p1 {
+	background-color: pink;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	text-align: center;
+	width: auto;
+	border: 1px solid black; 
+}
+
+#p2 {
+	background-color: red;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 30%;
+	text-align: center;
+	width: auto;
+	border: 1px solid black;  
+}
+
+#p3 {
+	background-color: yellow;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 30%;
+	text-align: center;
+	width: auto;
+	border: 1px solid black;  
+}
+
+
 
 
 
