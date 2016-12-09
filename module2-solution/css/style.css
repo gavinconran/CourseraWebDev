@@ -12,7 +12,7 @@ h1 {
 }
 
 div {
-  width: 30%;
+  width: 90%;
   padding: 10px;
   background-color: #D3D3D3;
   border: 1px solid black;
@@ -66,6 +66,24 @@ div#container3 {
 	width: auto;
 	border: 1px solid black;  
 	font-size:120%;
+}
+
+/********** Large devices only **********/
+@media (min-width: 992px) {
+  div {
+    width: 30%;
+  }
+}
+
+
+/********** Medium devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  div {
+    width: 40%;
+  }
+  div#container3 {
+  width: 100%
+}
 }
 
 
