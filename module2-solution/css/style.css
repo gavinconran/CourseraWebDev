@@ -12,7 +12,7 @@ h1 {
 }
 
 div {
-  width: 90%;
+  width: auto;
   padding: 10px;
   background-color: #D3D3D3;
   border: 1px solid black;
@@ -71,7 +71,7 @@ div#container3 {
 /********** Large devices only **********/
 @media (min-width: 992px) {
   div {
-    width: 300px;
+    width: 27%;
   }
 }
 
@@ -81,9 +81,11 @@ div#container3 {
   div {
     width: 340px;
   }
+
   div#container3 {
   width: 720px;
   }
+
 }
 
 
