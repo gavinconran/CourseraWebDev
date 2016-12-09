@@ -79,10 +79,10 @@ div#container3 {
 /********** Medium devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
   div {
-    width: 46%;
+    width: 45%;
   }
   div#container3 {
-  width: 95%
+  width: 94%
   }
 }
 
