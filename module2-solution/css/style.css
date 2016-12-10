@@ -81,12 +81,13 @@ div#container3 {
 @media (min-width: 768px) and (max-width: 991px) {
   div {
     width: 45%;
-    margin: 2%;
+    margin-right: : auto;
+    margin-left: auto;
   }
 
   div#container3 {
-  width: 94%;
-  margin: 2%;
+  width: 90%;
+  margin: auto;
   }
 }
 
