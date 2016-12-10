@@ -1,7 +1,7 @@
 h1 {
 	color:black;
 	text-align:center;
-	font-size:18pt;
+	font-size:175%;
 }
 
 * {
@@ -43,7 +43,7 @@ div#container3 {
 	text-align: center;
 	width: auto;
 	border: 1px solid black; 
-	font-size:120%;
+	font-size:125%;
 }
 
 #p2 {
@@ -54,7 +54,7 @@ div#container3 {
 	text-align: center;
 	width: auto;
 	border: 1px solid black;  
-	font-size:120%;
+	font-size:125%;
 }
 
 #p3 {
@@ -65,7 +65,7 @@ div#container3 {
 	text-align: center;
 	width: auto;
 	border: 1px solid black;  
-	font-size:120%;
+	font-size:125%;
 }
 
 /********** Large devices only **********/
