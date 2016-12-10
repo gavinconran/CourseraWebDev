@@ -71,7 +71,8 @@ div#container3 {
 /********** Large devices only **********/
 @media (min-width: 992px) {
   div {
-    width: 27%;
+    width: 30%;
+    margin: 1%;
   }
 }
 
@@ -79,15 +80,15 @@ div#container3 {
 /********** Medium devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
   div {
-    width: 340px;
+    width: 45%;
+    margin: 2%;
   }
 
   div#container3 {
-  width: 720px;
+  width: 94%;
+  margin: 2%;
   }
-
 }
-
 
 
 
