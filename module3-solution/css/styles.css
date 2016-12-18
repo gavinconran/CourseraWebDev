@@ -45,11 +45,13 @@ h1 {
   margin-top: 10px;
 }
 #nav-list a {
-  color: #951C49;
+  color: white;
+  background-color: blue;
   text-align: center;
 }
 #nav-list a:hover {
   background: #E7E7E7;
+  color: black;
 }
 #nav-list a span {
   font-size: 1.8em;
