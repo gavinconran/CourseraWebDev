@@ -5,6 +5,11 @@ body {
   font-family: 'Oxygen', sans-serif;
 }
 
+h1 {
+  color:white;
+  font-size:175%;
+}
+
 /** HEADER **/
 #header-nav {
   background-color: #f6b319;
