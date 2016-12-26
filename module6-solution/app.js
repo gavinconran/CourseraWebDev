@@ -16,7 +16,7 @@ function LunchCheckerController($scope) {
     if (totalItems == 0) {
     	$scope.message =  "Please enter data first";
     } else if (totalItems > 0 && totalItems <= 3) {
-    	$scope.message = "Enjoy;"
+    	$scope.message = "Enjoy:"
     } else {
     	$scope.message = "Too much!";
     }
