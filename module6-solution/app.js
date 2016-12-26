@@ -8,7 +8,6 @@ LunchCheckerController.$inject = ['$scope'];
 function LunchCheckerController($scope) {
   $scope.message = "";
   $scope.items = "";
-  $scope.color = "blue"; 
 
   $scope.displayMessage = function () {
   	var totalItems = countItems($scope.items); 
