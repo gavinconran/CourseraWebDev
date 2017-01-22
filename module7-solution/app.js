@@ -31,11 +31,10 @@ function ShoppingListCheckOffService() {
   var toBuyItems = [ { name: 'cookies', quantity: 10 },
   					 { name: 'apples', quantity: 6 },
   					 { name: 'pears', quantity: 10 },
-  					 { name: 'oranges', quantity: 2 }];
+  					 { name: 'oranges', quantity: 2 },
+  					 { name: 'pineapples', quantity: 2 }];				 
 
-  var maxNum = 4;					 
-
-  var boughtItems = [  ];
+  var boughtItems = [];
 
   service.removeItem = function(itemIdex) {
   	var removedItem = toBuyItems.splice(itemIdex, 1);
