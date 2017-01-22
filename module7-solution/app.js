@@ -33,6 +33,8 @@ function ShoppingListCheckOffService() {
   					 { name: 'cookies', quantity: 10 },
   					 { name: 'oranges', quantity: 2 }];
 
+  var maxNum = 4;					 
+
   var boughtItems = [  ];
 
   service.removeItem = function(itemIdex) {
@@ -47,6 +49,7 @@ function ShoppingListCheckOffService() {
   service.getBoughtItems = function () {
     return boughtItems;
   };
+
 }
 
 })();
