@@ -30,7 +30,7 @@ function ShoppingListCheckOffService() {
   // List of shopping items
   var toBuyItems = [ { name: 'cookies', quantity: 10 },
   					 { name: 'apples', quantity: 6 },
-  					 { name: 'cookies', quantity: 10 },
+  					 { name: 'pears', quantity: 10 },
   					 { name: 'oranges', quantity: 2 }];
 
   var maxNum = 4;					 
