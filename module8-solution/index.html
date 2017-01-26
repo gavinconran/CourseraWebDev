@@ -11,12 +11,12 @@
 <body>
    <div class="container">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
-      <div ng-controller='NarrowItDownController as List'>
+      <div ng-controller='NarrowItDownController as results'>
         <div class="form-group">
-          <input type="text" placeholder="search term" class="form-control">
+          <input type="text" placeholder="chicken" name="searchterm" class="form-control">
         </div>
         <div class="form-group narrow-button">
-          <button class="btn btn-primary">Narrow It Down For Me!</button>
+          <button class="btn btn-primary" ng-click="results.getResultItems('chicken');">Narrow It Down For Me!</button>
         </div>
 
         <!-- found-items should be implemented as a component -->

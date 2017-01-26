@@ -8,16 +8,20 @@ angular.module('NarrowItDownApp', [])
 
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
-  var menu = this;
+  var list = this;
 
-  var promise = MenuSearchService.getMatchedMenuItems();
+  list.getResultItems = function (searchTerm) {
+  	console.log('searchTerm: ', searchTerm);
+    var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
 
-  promise.then(function (response) {
-    menu.found = response.data;
-  })
-  .catch(function (error) {
-    console.log("Something went terribly wrong.");
-  });
+    promise.then(function (response) {
+      list.found = response;
+      console.log('3: ', list.found);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  };
 
 }
 
@@ -29,6 +33,17 @@ function MenuSearchService($http, ApiBasePath) {
     var response = $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
+    }).then(function(result) {
+    	// process result and only keep items that match
+    	var foundItems = [];
+    	for (var i = 0; i < result.data.menu_items.length; i++) {
+      		var description = result.data.menu_items[i].description;
+      		if (description.toLowerCase().indexOf(searchTerm) !== -1) {
+        		foundItems.push(result.data.menu_items[i]);
+      }
+    }
+ 		// return processed items   
+    	return foundItems;
     });
 
     return response;
