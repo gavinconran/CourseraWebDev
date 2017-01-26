@@ -10,9 +10,7 @@ angular.module('NarrowItDownApp', [])
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
-
-  var origTitle = "Available Choices";
-  
+  list.found = [];
 
   list.getResultItems = function (searchTerm) {
   	console.log('searchTerm: ', searchTerm);
@@ -20,9 +18,8 @@ function NarrowItDownController(MenuSearchService) {
 
     promise.then(function (response) {
       list.found = response;
-      console.log('3: ', list.found);
-      list.title = origTitle + " (" + list.found.length + " items )";
-      console.log('3: ', list.found.length);
+      console.log('list.found: ', list.found);
+      console.log('list.found.length: ', list.found.length);
     })
     .catch(function (error) {
       console.log(error);
