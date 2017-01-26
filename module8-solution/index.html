@@ -11,16 +11,24 @@
 <body>
    <div class="container">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
-      <div ng-controller='NarrowItDownController as results'>
+      <div ng-controller='NarrowItDownController as list'>
         <div class="form-group">
           <input type="text" ng-model="userInput" placeholder="search term" class="form-control">
         </div>
         <div class="form-group narrow-button">
-          <button class="btn btn-primary" ng-click="results.getResultItems(userInput);">Narrow It Down For Me!</button>
+          <button class="btn btn-primary" ng-click="list.getResultItems(userInput);">Narrow It Down For Me!</button>
         </div>
 
         <!-- found-items should be implemented as a component -->
-        <found-items found-items="...." on-remove="...."></found-items>
+        <br>
+        <br>
+        <br>
+        <ul>
+          <li ng-repeat="item in list.found">
+            {{ item.name }}
+            <button class="btn btn-default" ng-click="list.removeItem($index);"><span class="glyphicon glyphicon-ok"></span> Don't want this one!</button>
+          </li>
+        </ul>
       </div>  
   </div>
 

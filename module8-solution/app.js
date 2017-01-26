@@ -6,9 +6,13 @@ angular.module('NarrowItDownApp', [])
 .service('MenuSearchService', MenuSearchService)
 .constant('ApiBasePath',  "https://davids-restaurant.herokuapp.com");
 
+
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
+
+  var origTitle = "Available Choices";
+  
 
   list.getResultItems = function (searchTerm) {
   	console.log('searchTerm: ', searchTerm);
@@ -17,10 +21,16 @@ function NarrowItDownController(MenuSearchService) {
     promise.then(function (response) {
       list.found = response;
       console.log('3: ', list.found);
+      list.title = origTitle + " (" + list.found.length + " items )";
+      console.log('3: ', list.found.length);
     })
     .catch(function (error) {
       console.log(error);
     })
+  };
+
+  list.removeItem = function (itemIndex) {
+  	list.found.splice(itemIndex, 1);
   };
 
 }
