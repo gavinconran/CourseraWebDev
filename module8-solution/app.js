@@ -12,8 +12,8 @@ function FoundItemsDirective() {
     templateUrl: 'foundItems.html',
     scope: {
       list: '<items',
-      title: '@title',
-      onRemove: '&'
+      title: '@title'
+      // onRemove: '&'
     }
   };
 
