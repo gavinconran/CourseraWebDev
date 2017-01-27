@@ -1,12 +1,12 @@
 <div ng-if="list.search == true">
-<h3>Using Simple Custom Directive</h3>
+	<h3>{{ title }}</h3>
 </div> 
 <ul>
-	<li ng-repeat="item in list.found">
+	<li ng-repeat="item in list">
 		<strong>Name:</strong> {{ item.name }}, <strong>Short Name:</strong> {{ item.short_name }}, <strong>Description:</strong> {{ item.description }}
 		<button class="btn btn-default" ng-click="list.removeItem($index);"><span class="glyphicon"></span> Don't want this one!</button>
 		<!-- <button class="btn btn-default" ng-click="list.onRemove{{ index:$index }};"><span class="glyphicon"></span> Don't want this one!</button> -->
     </li>
 </ul>
-<div ng-if="list.search == true && list.found.length === 0" class="emptyMessage">Nothing found.</div> 
+<div ng-if="list.search == true && list.length === 0" class="emptyMessage">Nothing found.</div> 
   

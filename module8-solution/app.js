@@ -9,14 +9,11 @@ angular.module('NarrowItDownApp', [])
 
 function FoundItemsDirective() {
   var ddo = {
-    templateUrl: 'foundItems.html'
-    // scope: {
-    //   items: '<'
-    //   onRemove: '&'
-    // }
-    // controller: ShoppingListDirectiveController,
-    // controllerAs: 'list',
-    // bindToController: true 
+    templateUrl: 'foundItems.html',
+    scope: {
+      list: '<items',
+      title: '@title'
+    }
   };
 
   return ddo;
@@ -27,7 +24,8 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.found = [];
-  list.search = false;
+  list.found.search = false;
+  list.title = 'Using Isolate Scope Custom Directive';
 
   list.getResultItems = function (searchTerm) {
   	console.log('searchTerm: ', searchTerm);
@@ -35,7 +33,7 @@ function NarrowItDownController(MenuSearchService) {
 
     promise.then(function (response) {
       list.found = response;
-      list.search = true;
+      list.found.search = true;
       console.log('list.found: ', list.found);
       console.log('list.found.length: ', list.found.length);
     })
