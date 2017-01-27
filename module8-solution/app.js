@@ -11,6 +11,7 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.found = [];
+  list.search = false;
 
   list.getResultItems = function (searchTerm) {
   	console.log('searchTerm: ', searchTerm);
@@ -18,6 +19,7 @@ function NarrowItDownController(MenuSearchService) {
 
     promise.then(function (response) {
       list.found = response;
+      list.search = true;
       console.log('list.found: ', list.found);
       console.log('list.found.length: ', list.found.length);
     })
