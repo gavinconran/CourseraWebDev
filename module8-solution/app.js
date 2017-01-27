@@ -12,7 +12,8 @@ function FoundItemsDirective() {
     templateUrl: 'foundItems.html',
     scope: {
       list: '<items',
-      title: '@title'
+      title: '@title',
+      onRemove: '&'
     }
   };
 
@@ -25,7 +26,7 @@ function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.found = [];
   list.found.search = false;
-  list.title = 'Using Isolate Scope Custom Directive';
+  list.title = 'Using Isolate Scope Custom Directive and Directive API';
 
   list.getResultItems = function (searchTerm) {
   	console.log('searchTerm: ', searchTerm);
@@ -43,6 +44,7 @@ function NarrowItDownController(MenuSearchService) {
   };
 
   list.removeItem = function (itemIndex) {
+    console.log("index: ", itemIndex);
   	list.found.splice(itemIndex, 1);
   };
 
