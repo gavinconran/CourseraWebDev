@@ -45,13 +45,15 @@ function MenuSearchService($http, ApiBasePath) {
     }).then(function(result) {
     	// process result and only keep items that match
     	var foundItems = [];
-    	for (var i = 0; i < result.data.menu_items.length; i++) {
-      		var description = result.data.menu_items[i].description;
-      		if (description.toLowerCase().indexOf(searchTerm) !== -1) {
-        		foundItems.push(result.data.menu_items[i]);
+      if (searchTerm !== '') {
+        for (var i = 0; i < result.data.menu_items.length; i++) {
+          var description = result.data.menu_items[i].description;
+          if (description.toLowerCase().indexOf(searchTerm) !== -1) {
+            foundItems.push(result.data.menu_items[i]);
+          }
+        }	
       }
-    }
- 		// return processed items   
+ 		 // return processed items   
     	return foundItems;
     });
 

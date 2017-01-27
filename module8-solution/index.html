@@ -25,12 +25,11 @@
         <br>
         <ul>
           <li ng-repeat="item in list.found">
-            Name: {{ item.name }}, Short Name: {{ item.short_name }}, Description: {{ item.description }}
+            <strong>Name:</strong> {{ item.name }}, <strong>Short Name:</strong> {{ item.short_name }}, <strong>Description:</strong> {{ item.description }}
             <button class="btn btn-default" ng-click="list.removeItem($index);"><span class="glyphicon"></span> Don't want this one!</button>
           </li>
         </ul>
-        <div ng-if="list.search == true 
-                && (list.found.length === 0 || userInput == '')" class="emptyMessage">Nothing found.</div>
+        <div ng-if="list.search == true && list.found.length === 0" class="emptyMessage">Nothing found.</div>
       </div>  
   </div>
 
