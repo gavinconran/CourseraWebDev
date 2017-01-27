@@ -26,7 +26,7 @@ function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.found = [];
   list.found.search = false;
-  list.title = 'Using Isolate Scope Custom Directive and Directive API';
+  list.title = 'Using Isolate Scope Custom Directive (Not Directive API)';
 
   list.getResultItems = function (searchTerm) {
   	console.log('searchTerm: ', searchTerm);
