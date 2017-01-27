@@ -50,3 +50,8 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+
+.emptyMessage {
+  color: blue;
+  font-weight: bold;
+}
