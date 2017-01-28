@@ -31,15 +31,12 @@ function NarrowItDownController(MenuSearchService) {
   list.title = origTitle + " ( " + list.found.length + " items )";
 
   list.getResultItems = function (searchTerm) {
-  	console.log('searchTerm: ', searchTerm);
     var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
 
     promise.then(function (response) {
       list.found = response;
       list.found.search = true;
       list.title = origTitle + " ( " + list.found.length + " items )";
-      console.log('list.found: ', list.found);
-      console.log('list.found.length: ', list.found.length);
     })
     .catch(function (error) {
       console.log(error);
@@ -47,7 +44,6 @@ function NarrowItDownController(MenuSearchService) {
   };
 
   list.removeItem = function (itemIndex) {
-    console.log("index: ", itemIndex);
   	list.found.splice(itemIndex, 1);
     list.title = origTitle + " ( " + list.found.length + " items )";
   };
