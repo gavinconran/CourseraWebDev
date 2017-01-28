@@ -26,7 +26,9 @@ function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.found = [];
   list.found.search = false;
-  list.title = 'Using Isolate Scope Custom Directive (Not Directive API)';
+
+  var origTitle = "Matching Items";
+  list.title = origTitle + " ( " + list.found.length + " items )";
 
   list.getResultItems = function (searchTerm) {
   	console.log('searchTerm: ', searchTerm);
@@ -35,6 +37,7 @@ function NarrowItDownController(MenuSearchService) {
     promise.then(function (response) {
       list.found = response;
       list.found.search = true;
+      list.title = origTitle + " ( " + list.found.length + " items )";
       console.log('list.found: ', list.found);
       console.log('list.found.length: ', list.found.length);
     })
@@ -46,6 +49,7 @@ function NarrowItDownController(MenuSearchService) {
   list.removeItem = function (itemIndex) {
     console.log("index: ", itemIndex);
   	list.found.splice(itemIndex, 1);
+    list.title = origTitle + " ( " + list.found.length + " items )";
   };
 
 }
@@ -61,10 +65,10 @@ function MenuSearchService($http, ApiBasePath) {
     }).then(function(result) {
     	// process result and only keep items that match
     	var foundItems = [];
-      if (searchTerm !== '') {
+      if (searchTerm) {
         for (var i = 0; i < result.data.menu_items.length; i++) {
           var description = result.data.menu_items[i].description;
-          if (description.toLowerCase().indexOf(searchTerm) !== -1) {
+          if (description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
             foundItems.push(result.data.menu_items[i]);
           }
         }	
