@@ -46,6 +46,7 @@ function NarrowItDownController(MenuSearchService) {
   list.removeItem = function (itemIndex) {
   	list.found.splice(itemIndex, 1);
     list.title = origTitle + " ( " + list.found.length + " items )";
+    console.log("this: ", this);
   };
 
 }
