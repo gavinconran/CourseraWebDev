@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('ShoppingList')
+angular.module('MenuApp')
 .config(RoutesConfig);
 
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -16,17 +16,17 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/shoppinglist/templates/home.template.html'
+    templateUrl: 'src/categories/templates/home.template.html'
   })
 
   // Premade list page
   .state('mainList', {
     url: '/main-list',
-    templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
-    controller: 'MainShoppingListController as mainList',
+    templateUrl: 'src/categories/templates/main.template.html',
+    controller: 'MainController as mainList',
     resolve: {
-      items: ['ShoppingListService', function (ShoppingListService) {
-        var result = ShoppingListService.getAllCategories();
+      items: ['MenuDataService', function (MenuDataService) {
+        var result = MenuDataService.getAllCategories();
         console.log(result);
         return result;
       }]
@@ -36,7 +36,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // // Item detail
   // .state('mainList.itemDetail', {
   //   // url: '/item-detail/{itemId}',
-  //   templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
+  //   templateUrl: 'src/categories/templates/item-detail.template.html',
   //   controller: 'ItemDetailController as itemDetail',
   //   params: {
   //     itemId: null
