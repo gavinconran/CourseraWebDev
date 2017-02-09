@@ -3,7 +3,7 @@
 
 angular.module('ShoppingList')
 .service('ShoppingListService', ShoppingListService)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com");
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
 
 ShoppingListService.$inject = ['$http', 'ApiBasePath'];
 function ShoppingListService($http, ApiBasePath) {
