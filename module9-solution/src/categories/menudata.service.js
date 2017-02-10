@@ -23,7 +23,6 @@ function MenuDataService($http, ApiBasePath) {
       method: "GET",
       url: (ApiBasePath + "/menu_items.json?category=" + categoryShortName)
     });
-
     return response;
   };
 
