@@ -21,7 +21,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Premade list page
   .state('mainList', {
-    url: '/main-list',
+    url: '/categories',
     templateUrl: 'src/categories/templates/main.template.html',
     controller: 'MainController as mainList',
     resolve: {
@@ -34,7 +34,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Item detail
   .state('mainList.itemDetail', {
-    url: '/item-detail/{itemId}',
+    url: '/items/{itemId}',
     templateUrl: 'src/categories/templates/item-detail.template.html',
     controller: 'ItemDetailController as itemDetail'
   });
