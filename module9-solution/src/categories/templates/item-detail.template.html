@@ -1,4 +1,7 @@
-<div>Item id: {{ itemDetail.id }}</div>
-<div>Item name: {{ itemDetail.name }}</div>
-<div>Item short name: {{ itemDetail.short_name }}</div>
-<div>Item special_instructions: {{ itemDetail.special_instructions }}</div>
+<br>
+<div>List of Menu Items under Category: {{ itemDetail.name }}</div>
+<ul>
+  <li ng-repeat="item in itemDetail.details">
+    {{ item.name }}
+  </li>
+</ul>
