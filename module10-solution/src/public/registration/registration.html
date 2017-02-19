@@ -55,15 +55,12 @@
           <span ng-if="reg.fav.invalid && regForm.fav.$touched">
             No such menu number exists
           </span>
-          <br>
+          <br><br>
 
         <button
           ng-disabled="regForm.$invalid"
           ng-click="reg.submit(reg.user)">Submit</button>
 
-          <div style="margin-top: 10px;">
-            Form valid? {{ regForm.$valid }}
-          </div>
       </form>
     </fieldset>
 
