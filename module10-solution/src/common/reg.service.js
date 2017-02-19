@@ -8,6 +8,7 @@ angular.module('common')
 RegService.$inject = ['$http', 'ApiPath'];
 function RegService($http, ApiPath) {
   var service = this;
+  service.info = false;
 
   service.getMenuItem = function (short_name) {
     var config = {};
@@ -22,14 +23,18 @@ function RegService($http, ApiPath) {
 
   service.saveUserDetails = function (user) {
     service.userDetails = user;
+    service.info = true;
     console.log('user saved: ', user);
     
   };
 
   service.getUserDetails = function () {
     console.log('user got: ', service.userDetails);
-    return service.userDetails
-    
+    return service.userDetails;
+  };
+
+  service.getUserStatus = function () {
+    return service.info;
   };
 
 }

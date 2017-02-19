@@ -13,12 +13,12 @@
    
      <h3>Favourite Dish: {{reg.info.favName}}</h3>
       <img class="img-responsive" width="250" height="150" ng-src="https://gconran-course5.herokuapp.com/images/{{reg.info.fav}}.jpg" alt="{{reg.info.name}}"
-        
-      <p class="menu-item-details">{{reg.info.favDescription}}</p>  
-
-    
+      <p class="menu-item-details">{{reg.info.favDescription}}</p>      
  </div>   
 
+ <div id="info" ng-if="reg.Info==false">
+   Not Signed Up Yet. Sign up Now!
+ </div>  
 </div>    
 
 
