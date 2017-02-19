@@ -55,7 +55,8 @@
           <span ng-if="reg.fav.invalid && regForm.fav.$touched">
             No such menu number exists
           </span>
-          <br><br>
+          <br>
+          <br>
 
         <button
           ng-disabled="regForm.$invalid"
@@ -65,11 +66,7 @@
     </fieldset>
 
     <div id="info" ng-if="reg.completed">
-      First Name: {{ reg.user.firstname}} <br>
-      Last Name: {{ reg.user.lastname}} <br>
-      Email: {{ reg.user.email}} <br>
-      Phone: {{ reg.user.phone }} <br>
-      Favourite Dish: {{ reg.user.fav }}
+      Your information has been saved.
     </div>
     <br>
 </div>    
