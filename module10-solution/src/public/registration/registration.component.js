@@ -14,6 +14,11 @@ function RegistrationController(RegService, loadingHttpInterceptor, $http) {
     reg.fav = RegService.getMenuItem(user.fav).then(function(result) {
     console.log('result:', result); // 'abc'
 
+    user.favName = result.name;
+    user.favDescription = result.description;
+
+    console.log('user: ', user);
+
     RegService.saveUserDetails(user);
 
 

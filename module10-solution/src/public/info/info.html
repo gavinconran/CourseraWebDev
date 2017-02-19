@@ -9,9 +9,17 @@
     <li> Last Name: {{ reg.info.lastname}} </li>
     <li> Email: {{ reg.info.email}} </li>
     <li> Phone: {{ reg.info.phone }} </li>
-    <li> Favourite Dish: {{ reg.info.fav }} </li>
    </ul> 
+   
+     <h3>Favourite Dish: {{reg.info.favName}}</h3>
+      <img class="img-responsive" width="250" height="150" ng-src="https://gconran-course5.herokuapp.com/images/{{reg.info.fav}}.jpg" alt="{{reg.info.name}}"
+        
+      <p class="menu-item-details">{{reg.info.favDescription}}</p>  
+
+    
  </div>   
 
 </div>    
+
+
 
