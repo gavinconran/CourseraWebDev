@@ -3,15 +3,15 @@
 angular.module('public')
 .controller('RegistrationController', RegistrationController);
 
-RegistrationController.$inject = ['RegService', 'loadingHttpInterceptor', '$http'];
-function RegistrationController(RegService, loadingHttpInterceptor, $http) {
+RegistrationController.$inject = ['RegService', 'loadingHttpInterceptor'];
+function RegistrationController(RegService, loadingHttpInterceptor) {
   var reg = this;
   reg.OK = false;
   reg.Info = true;
 
   reg.submit = function (user) {
     reg.completed = true;
-
+    // console.log('loadingHttpInterceptor: ', loadingHttpInterceptor.on);
     
     reg.fav = RegService.getMenuItem(user.fav).then(function(result) {
 
