@@ -59,7 +59,7 @@
 
         <button
           ng-disabled="regForm.$invalid"
-          ng-click="reg.submit(reg.user.fav)">Submit</button>
+          ng-click="reg.submit(reg.user)">Submit</button>
 
           <div style="margin-top: 10px;">
             Form valid? {{ regForm.$valid }}
@@ -67,7 +67,18 @@
       </form>
     </fieldset>
 
+    <button
+          ng-click="reg.getUser()">Details</button>
+
     <div id="info" ng-if="reg.completed">
+      First Name: {{ reg.user.firstname}} <br>
+      Last Name: {{ reg.user.lastname}} <br>
+      Email: {{ reg.user.email}} <br>
+      Phone: {{ reg.user.phone }} <br>
+      Favourite Dish: {{ reg.user.fav }}
+    </div>
+    <br>
+    <div id="info" ng-if="reg.OK">
       First Name: {{ reg.user.firstname}} <br>
       Last Name: {{ reg.user.lastname}} <br>
       Email: {{ reg.user.email}} <br>

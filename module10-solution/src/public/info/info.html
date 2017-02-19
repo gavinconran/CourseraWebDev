@@ -1,0 +1,14 @@
+<div class="container">
+<button
+  ng-click="reg.getUser()">Get My Info</button>
+
+ <div id="info" ng-if="reg.OK">
+    First Name: {{ reg.info.firstname}} <br>
+    Last Name: {{ reg.info.lastname}} <br>
+    Email: {{ reg.info.email}} <br>
+    Phone: {{ reg.info.phone }} <br>
+    Favourite Dish: {{ reg.info.fav }}
+ </div>   
+
+</div>    
+
