@@ -34,7 +34,6 @@ function MenuService($http, ApiPath) {
     }
 
     return $http.get(ApiPath + '/menu_items/' + short_name + '.json').then(function (response) {
-      console.log("fav:", response.data);
       return response.data;
     });
   };

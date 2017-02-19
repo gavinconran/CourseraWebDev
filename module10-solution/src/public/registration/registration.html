@@ -52,7 +52,7 @@
         <input type="text" name="fav" placeholder="Favourite Dish"
           ng-model="reg.user.fav"
           required>
-          <span ng-if="regForm.fav.$invalid && regForm.fav.$touched">
+          <span ng-if="reg.fav.invalid && regForm.fav.$touched">
             No such menu number exists
           </span>
           <br>
