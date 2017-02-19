@@ -40,6 +40,24 @@ function routeConfig ($stateProvider) {
           return MenuService.getMenuItems($stateParams.category);
         }]
       }
+    })
+    .state('public.registration', {
+      url: '/registration',
+      templateUrl: 'src/public/signup/registration.html',
+      controller: 'RegistrationController',
+      controllerAs: 'regCtrl'
     });
+}
+
+
+angular.module('public')
+.controller('RegistrationController', RegistrationController);
+
+function RegistrationController() {
+  var reg = this;
+
+  reg.submit = function () {
+    reg.completed = true;
+  };
 }
 })();
