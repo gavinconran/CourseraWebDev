@@ -1,6 +1,6 @@
 <div class="container">
     <fieldset>
-      <legend>Registration</legend>
+      <legend style="color: #fff">Registration</legend>
       <form name='regForm' novalidate >
 
         <input type="text" name="firstname" placeholder="First Name"
@@ -61,6 +61,10 @@
         <button
           ng-disabled="regForm.$invalid"
           ng-click="reg.submit(reg.user)">Submit</button>
+
+          <div style="margin-top: 10px;">
+            Form valid? {{ regForm.$valid }}
+          </div>
 
       </form>
     </fieldset>
