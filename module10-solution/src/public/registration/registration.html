@@ -72,6 +72,10 @@
     <div id="info" ng-if="reg.completed">
       Your information has been saved.
     </div>
+
+    <div id="info" ng-if="reg.error">
+      No such menu number exists. {{reg.erroe}}
+    </div>
     <br>
 </div>    
 

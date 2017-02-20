@@ -3,14 +3,13 @@
 angular.module('public')
 .controller('RegistrationController', RegistrationController);
 
-RegistrationController.$inject = ['RegService', 'loadingHttpInterceptor'];
-function RegistrationController(RegService, loadingHttpInterceptor) {
+RegistrationController.$inject = ['RegService', '$rootScope'];
+function RegistrationController(RegService, $rootScope) {
   var reg = this;
   reg.OK = false;
   reg.Info = true;
 
   reg.submit = function (user) {
-    reg.completed = true;
     // console.log('loadingHttpInterceptor: ', loadingHttpInterceptor.on);
     
     reg.fav = RegService.getMenuItem(user.fav).then(function(result) {
@@ -40,6 +39,25 @@ function RegistrationController(RegService, loadingHttpInterceptor) {
     
   };
 
-}
+  var listener;
+
+  reg.$onInit = function() {
+    listener = $rootScope.$on('spinner:activate', onSpinnerActivate);
+  };
+
+  reg.$onDestroy = function() {
+    listener();
+  };
+
+  function onSpinnerActivate(event, data) {
+    reg.error = data.error;
+    if (reg.error == true ) {
+      reg.completed = false;
+    } else {
+      reg.completed = true;
+    }
+    console.log('reg.error: ', reg.error);
+  }
+  };
 
 })();

@@ -38,7 +38,7 @@ function LoadingHttpInterceptor($rootScope, $q) {
 
     responseError: function (response) {
       if (--loadingCount === 0) {
-        $rootScope.$broadcast(loadingEventName, {on: false});
+        $rootScope.$broadcast(loadingEventName, {on: false, error: true});
       }
 
       return $q.reject(response);

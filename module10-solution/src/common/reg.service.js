@@ -16,7 +16,9 @@ function RegService($http, ApiPath) {
       config.params = {'short_name': short_name};
     }
 
-    return $http.get(ApiPath + '/menu_items/' + short_name + '.json').then(function (response) {
+    return $http.get(ApiPath + '/menu_items/' + short_name + '.json')
+    .then(function (response) {
+
       return response.data;
     });
   };
